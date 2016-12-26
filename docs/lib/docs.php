@@ -48,6 +48,7 @@ class strupt_docs {
             $i++;
         }
         
+        $display = $i === 1 ? "none" : "block";        
         echo "<html style='overflow-x: hidden'>
                 <head>
                     <title>$name API Documentation</title>
@@ -77,7 +78,7 @@ class strupt_docs {
                     <br/><br/>
                     <div class='row' style='margin-left: 3%; margin-right: 3%'>                    
                         <div id='sidebar' class='col-lg-3 col-md-4 col-sm-12 col-xs-12'>
-                            <div class='panel panel-default'>
+                            <div class='panel panel-default' style='display:$display'>
                                 <div class='panel-body'>
                                     <h3><strong>Contents</strong></h3><hr/>
                                     <ul class='list-group' style='margin: 0; box-shadow: none !important; border: none !important; border-radius: 0 !important;'>
