@@ -1,0 +1,76 @@
+html, body {
+    background-color: #f7f7f7 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.panel {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
+    border-radius: 0 !important;
+}
+
+.panel-heading {
+    background: none !important;
+}
+
+.sidebar-item {
+    border: none !important;
+    color: black !important;
+    font-weight: normal;
+    cursor: hand;
+    cursor: pointer;
+}
+
+.sidebar-item:hover {
+    border-radius: 6px !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+.sidebar-item-active {
+    border-radius: 6px !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+.header {
+    padding: 80px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
+}
+
+.header>p {
+    color: white;
+}
+
+#sidebar.affix-top {
+    position: static;
+    margin-top:30px;
+    width:228px;
+}
+
+#sidebar.affix {
+    position: fixed;
+    top:70px;
+    width:228px;
+}
+
+.footer {
+    background-color: #444;
+    color: white;
+    padding: 35px;
+    margin: 0;
+    margin-top: 30px;
+}
+
+.footer>p {
+    text-align: center;
+}
+
+.white-link, .white-link:focus, .white-link:visited {
+    text-decoration: none;
+    color: #999;
+}
+
+.white-link:hover {
+    color: white;
+}

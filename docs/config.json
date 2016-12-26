@@ -1,0 +1,70 @@
+{
+    "application": "Strupt",
+    "color" : "#c62828",
+    "colorLight" : "#e57373",
+    "year" : "2014",
+    "content" : {
+        "account" : {
+            "authenticate" : {
+                "description" : "Authenticate a user using the provided username and password combination",
+                "type" : "post",
+                "endpoint" : "/api/accounts/authenticate.php",
+                "success" : "{<br/>    'error' : false,<br/>    'id' : '9209b7b7f883426685332fe9288b4138'<br/>}",
+                "error" : "{<br/>    'error' : true,<br/>    'message' : 'Invalid username and password combination'<br/>}",
+                "params" : {
+                    "username" : "The provided username or email address",
+                    "password" : "The encrypted password string provided by the user"
+                }, "codes" : {
+                    "0x0001" : "Connection to the database could not be established",
+                    "0x0002" : "Missing 'username' parameter",
+                    "0x0003" : "Missing 'password' parameter",
+                    "0x0004" : "Email address is not registered",
+                    "0x0005" : "Invalid password provided",
+                    "0x0006" : "Account is disabled"
+                }                
+            }, "register" : {
+                "description" : "Register a new account using the provided email address and password combination",
+                "type" : "post",
+                "endpoint" : "/api/accounts/register.php",
+                "success" : "{<br/>    'error' : false<br/>}",
+                "error" : "{<br/>    'error' : true,<br/>    'message' : 'Email address is already registered'<br/>}",
+                "params" : {
+                    "email" : "The provided email address",
+                    "password" : "The encrypted password string provided by the user"
+                }, "codes" : {
+                    "0x0001" : "Connection to the database could not be established",
+                    "0x0002" : "Missing 'email' parameter",
+                    "0x0003" : "Missing 'password' parameter",
+                    "0x0004" : "Invalid email address provided",
+                    "0x0005" : "Email address is already registered"
+                }                
+            }
+        }, "database" : {
+            "init database" : {
+                "description" : "Allows the system administrator to drop and recreate all database tables",
+                "type" : "post",
+                "endpoint" : "/api/database/init.php",
+                "success" : "{<br/>    'error' : false<br/>}",
+                "error" : "{<br/>    'error' : true,<br/>    'message' : 'Invalid password'<br/>}",
+                "params" : {
+                    "password" : "The encrypted system administrator password"
+                }, "codes" : {
+                    "0x0001" : "Connection to the database could not be established",
+                    "0x0002" : "Missing 'password' parameter",
+                    "0x0003" : "Invalid password",
+                    "0x0004" : "Unable to execute the 'drop.sql' file",
+                    "0x0005" : "Unable to execute the 'create.sql' file"
+                }    
+            }, "test connection" : {
+                "description" : "Allows the system administrator to test the connection to the database",
+                "type" : "get",
+                "endpoint" : "/api/database/test_connection.php",
+                "success" : "{<br/>    'error' : false<br/>}",
+                "error" : "{<br/>    'error' : true,<br/>    'message' : 'Unable to establish a connection to the database (127.0.0.1)'<br/>}",
+                "codes" : {
+                    "0x0001" : "Connection to the database could not be established"
+                }    
+            }
+        }
+    }
+}
